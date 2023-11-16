@@ -1,9 +1,6 @@
-import express from "express";
-import { Express, Request, Response, NextFunction } from "express";
+import { app } from "./server";
 
-const app: Express = express();
-
-const port: number = 3000;
+const port: number = 8000;
 
 app.listen(port, () => {
   console.log(`[Server]: Server listening at port ${port}`)
