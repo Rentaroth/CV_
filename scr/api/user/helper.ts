@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { User } from "../../database/mongo/models/ts_types";
+import { User } from "../../config/ts_types";
 import { UserEntity } from "./entity";
 
 async function userCreationHelper(data: User) {
@@ -33,7 +33,8 @@ async function userObtentionHelper(id : string) {
 async function userUpdateHelper(id: string, data: User) {
   let info = {
     id,
-    ... data,
+    ...data,
+    updatedAt: new Date(),
   }
   const entity = new UserEntity(info);
   try {

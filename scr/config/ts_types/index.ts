@@ -17,4 +17,14 @@ interface User {
   updatedAt?: Date,
 }
 
-export { User }
+interface Experience {
+  id?: string,
+  position?: string,
+  company?: string,
+  description?: string,
+  serviceTime?: string,
+  createdAt?: Date,
+  updatedAt?: Date,
+}
+
+export { User, Experience }

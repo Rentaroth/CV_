@@ -1,7 +1,5 @@
-import mongoose from "mongoose";
-import { User } from "./ts_types";
-
-const { Schema, model } = mongoose;
+import { Schema, model } from "mongoose";
+import { User } from "../../../config/ts_types";
 
 const user = new Schema<User>({
   name: String,
@@ -18,6 +16,8 @@ const user = new Schema<User>({
   linkedin: String,
   photo: Buffer,
   resume: String,
+  createdAt: Date,
+  updatedAt: Date,
 });
 
 const UserModel = model<User>('User', user);

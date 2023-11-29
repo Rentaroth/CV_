@@ -1,5 +1,4 @@
-import { User } from "../../database/mongo/models/ts_types";
-import { Types } from "mongoose";
+import { User } from "../../config/ts_types";
 import { UserRepository } from "../../repositories/userRepository";
 
 class UserEntity extends UserRepository {

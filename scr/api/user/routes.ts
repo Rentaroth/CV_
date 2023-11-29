@@ -6,8 +6,8 @@ const router: Router = Router();
 router.get('/', obtainUserController);
 router.get('/:id', obtainUserController);
 router.post('/', createUserController);
-router.put('/', updateUserController);
-router.delete('/', deleteUserController);
+router.put('/:id', updateUserController);
+router.delete('/:id', deleteUserController);
 
 
-export { router }
+export { router };
