@@ -1,9 +1,13 @@
 import { Router } from "express";
-import { greet, createUserController } from "./controller";
+import { createUserController, deleteUserController, obtainUserController, updateUserController } from "./controller";
 
 const router: Router = Router();
 
-router.get('/', greet);
-router.post('/', createUserController)
+router.get('/', obtainUserController);
+router.get('/:id', obtainUserController);
+router.post('/', createUserController);
+router.put('/', updateUserController);
+router.delete('/', deleteUserController);
+
 
 export { router }

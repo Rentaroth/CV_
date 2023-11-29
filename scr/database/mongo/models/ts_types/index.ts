@@ -1,7 +1,7 @@
-import { ObjectId } from "mongoose";
+import { Types } from "mongoose";
 
 interface User {
-  id?: ObjectId,
+  id?: string,
   name?: string,
   last_name?: string,
   email?: string,

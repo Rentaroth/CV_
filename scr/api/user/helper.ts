@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import { User } from "../../database/mongo/models/ts_types";
 import { UserEntity } from "./entity";
 
@@ -19,6 +20,43 @@ async function userCreationHelper(data: User) {
   }
 }
 
+async function userObtentionHelper(id : string) {
+  const entity = new UserEntity({ id });
+  try {
+    const result = await entity.userReadMethod();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function userUpdateHelper(id: string, data: User) {
+  let info = {
+    id,
+    ... data,
+  }
+  const entity = new UserEntity(info);
+  try {
+    const result = await entity.userUpdateMethod();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function userDeleteHelper(id: string) {
+  const entity = new UserEntity({ id });
+  try {
+    const result = await entity.userDeleteMethod();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export {
   userCreationHelper,
+  userObtentionHelper,
+  userUpdateHelper,
+  userDeleteHelper,
 }
