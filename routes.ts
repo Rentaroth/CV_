@@ -3,6 +3,7 @@ import { user } from "./scr/api/user";
 import { experience } from "./scr/api/experience";
 import { education } from "./scr/api/education";
 import { skills } from "./scr/api/skills";
+import { softSkills } from "./scr/api/softSkills";
 
 const router: Router = Router();
 
@@ -11,5 +12,6 @@ export default (): Router => {
   router.use('/experience', experience);
   router.use('/education', education);
   router.use('/skills', skills);
+  router.use('/softSkills', softSkills);
   return router;
 };
