@@ -1,13 +1,13 @@
 import { Model } from "mongoose";
-import { Experience, User } from "../config/ts_types";
+import { Education, Experience, User } from "../config/ts_types";
 
 class BaseRepository {
-  model: Model<User | Experience>
-  constructor(model: Model<User | Experience>) {
+  model: Model<User | Experience | Education>
+  constructor(model: Model<User | Experience | Education>) {
     this.model = model;
   }
 
-  async create(data: User | Experience) {
+  async create(data: User | Experience | Education) {
     const instance = new this.model({ ...data });
     await instance.save();
     const temp = instance.toJSON();
@@ -23,7 +23,7 @@ class BaseRepository {
     return result;
   }
 
-  async update(data: User | Experience, id: string | undefined) {
+  async update(data: User | Experience | Education, id: string | undefined) {
     const result = await this.model.findOneAndUpdate({ _id: id }, data, { new: true });
     return result;
   }
