@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { _config } from "./config_type";
+import { _config } from "./ts_types/config.types";
 
 dotenv.config()
 

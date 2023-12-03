@@ -1,9 +1,9 @@
 import { Model } from "mongoose";
-import { Education, Experience, User } from "../config/ts_types";
+import { Education, Experience, User, Skills } from "../config/ts_types";
 
 class BaseRepository {
-  model: Model<User | Experience | Education>
-  constructor(model: Model<User | Experience | Education>) {
+  model: Model<User | Experience | Education | Skills>
+  constructor(model: Model<User | Experience | Education | Skills>) {
     this.model = model;
   }
 
