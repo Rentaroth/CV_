@@ -5,6 +5,7 @@ import { education } from "./scr/api/education";
 import { skills } from "./scr/api/skills";
 import { softSkills } from "./scr/api/softSkills";
 import { languages } from "./scr/api/languages";
+import { portfolio } from "./scr/api/portfolio";
 
 const router: Router = Router();
 
@@ -15,5 +16,6 @@ export default (): Router => {
   router.use('/skills', skills);
   router.use('/softSkills', softSkills);
   router.use('/languages', languages);
+  router.use('/portfolio', portfolio);
   return router;
 };
